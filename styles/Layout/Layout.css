@@ -1,6 +1,13 @@
+.Layout .logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 0 10px;
+}
+
 .Layout header {
   color: black;
-  background-color: #c0c0c0;
+  background-color: bisque;
   height: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8,13 +15,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.Layout header img {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  margin: 0 10px;
 }
 
 .Layout header .title {
@@ -48,7 +48,7 @@
 }
 
 .Layout .topImage div {
-  color: white;
+  color: darkslategray;
   position: absolute;
   left: 8%;
   top: 20%;
@@ -57,5 +57,27 @@
 
 .Layout main {
   background-color: aqua;
+  width: 70%;
+  margin: 0 auto;
+  min-height: 500px;
+}
+
+.Layout footer {
+  background-color: burlywood;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Layout footer .btn {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.Layout footer .btn button {
+  margin: auto 20px;
 }
 /*# sourceMappingURL=Layout.css.map */

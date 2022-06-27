@@ -14,7 +14,7 @@ export const Layout = (props: props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <img src="/images/pagu.jpg" alt="" />
+        <img className="logo" src="/images/logo2.png" alt="" />
         <div className="title">Next BLOG</div>
         <div className="snsImages">
           <img className="sns" src="/images/github.jpg" alt="" />
@@ -24,13 +24,15 @@ export const Layout = (props: props) => {
       </header>
       <div className="topImage">
         <div>Next BLOG</div>
-        <img src="/images/topImage4.jpg" alt="" />
+        <img src="/images/topImage5.jpg" alt="" />
       </div>
       <main>{props.children}</main>
       <footer>
-        <img src="" alt="" />
+        <img className="logo" src="/images/pagu.jpg" alt="" />
         <div>takuya Next-blog</div>
-        <button>to administrator page</button>
+        <div className="btn">
+          <button>to administrator page</button>
+        </div>
       </footer>
     </div>
   );
