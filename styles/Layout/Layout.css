@@ -1,0 +1,61 @@
+.Layout header {
+  color: black;
+  background-color: #c0c0c0;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Layout header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 0 10px;
+}
+
+.Layout header .title {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.Layout header .snsImages {
+  margin-right: 0;
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Layout header .snsImages img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.Layout .topImage {
+  position: relative;
+  height: 450px;
+}
+
+.Layout .topImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.Layout .topImage div {
+  color: white;
+  position: absolute;
+  left: 8%;
+  top: 20%;
+  font-size: 100px;
+}
+
+.Layout main {
+  background-color: aqua;
+}
+/*# sourceMappingURL=Layout.css.map */
