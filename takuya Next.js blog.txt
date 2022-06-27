@@ -1,0 +1,14 @@
+takuya Next.js blog
+
+適応する技術
+・figma
+・Next.js
+・jestとstorybookでテスト
+・レスポンシブ対応
+・Sass（SCSS記法）
+・java(API作成)　以前作成したNode.jsのコードを引用するかも
+・postgresでdb構築
+・EC2でサーバー構築
+・dockerでコンテナ構築して載せる
+
+
