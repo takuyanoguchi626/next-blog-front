@@ -13,7 +13,7 @@ export async function getRecentArticles() {
 export async function getArticleIds() {
   // const res = await fetch("");
   // const articleIds = await res.json();
-  const articleIds = [1, 2, 3];
+  const articleIds = [{ id: 1 }, { id: 2 }, { id: 3 }];
   return articleIds;
 }
 
