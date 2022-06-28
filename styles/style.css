@@ -190,4 +190,57 @@ body {
 #Layout footer .btn button:hover {
   opacity: 0.8;
 }
+
+#topPage .recentArticles {
+  margin-left: 50px;
+}
+
+#topPage .recentArticles .recentArticleTitle {
+  position: relative;
+  background: burlywood;
+  width: 280px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px;
+  -webkit-box-shadow: 0px 0px 0px 5px burlywood;
+          box-shadow: 0px 0px 0px 5px burlywood;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+}
+
+#topPage .recentArticles .recentArticleTitle:after {
+  position: absolute;
+  content: "";
+  left: -7px;
+  top: -7px;
+  border-width: 0 0 15px 15px;
+  border-style: solid;
+  border-color: #fff #fff burlywood;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+#topPage .recentArticles .recentArticleList .recentArticle {
+  width: 700px;
+  height: 250px;
+  margin-top: 30px;
+}
+
+#topPage .recentArticles .recentArticleList .recentArticle .title {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+#topPage .recentArticles .recentArticleList .recentArticle .postDate {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
 /*# sourceMappingURL=style.css.map */

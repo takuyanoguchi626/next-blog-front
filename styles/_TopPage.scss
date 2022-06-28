@@ -1,0 +1,44 @@
+.recentArticles {
+  margin-left: 50px;
+
+  .recentArticleTitle {
+    position: relative;
+    background: burlywood;
+    width: 280px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    box-shadow: 0px 0px 0px 5px burlywood;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+    // color: #454545;
+    &:after {
+      position: absolute;
+      content: "";
+      left: -7px;
+      top: -7px;
+      border-width: 0 0 15px 15px;
+      border-style: solid;
+      border-color: #fff #fff burlywood;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .recentArticleList {
+    .recentArticle {
+      width: 700px;
+      height: 250px;
+      margin-top: 30px;
+      .title {
+        font-weight: bold;
+        font-size: 40px;
+      }
+      .postDate {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

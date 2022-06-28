@@ -71,7 +71,7 @@ export const Layout = (props: props) => {
           <div className="romajiName">Takuya Noguchi</div>
           <div className="job">ITエンジニア</div>
           <div className="pastArticleList">
-            <div className="pastArticleTitle">過去の記事</div>
+            <div className="pastArticleTitle">過去の投稿</div>
             {pastArticleList.map((pastArticle) => {
               const formatPostDate = format(pastArticle.postDate, "yyyy/MM/dd");
               return (
