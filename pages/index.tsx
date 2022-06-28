@@ -1,6 +1,6 @@
 import { Layout } from "../components/Layout";
 import { RecentArticle } from "../components/organisms/RecentArticles";
-import { getRecentArticles } from "../hooks/GetRecentArticles";
+import { getRecentArticles } from "../lib/fetch";
 import { Article } from "../types/Article";
 
 export async function getStaticProps() {
