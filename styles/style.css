@@ -24,7 +24,14 @@ body {
   font-size: xx-large;
 }
 
+@media (max-width: 767px) {
+  #Layout .title {
+    font-size: 5vw;
+  }
+}
+
 #Layout header {
+  width: 100%;
   background-color: burlywood;
   height: 70px;
   display: -webkit-box;
@@ -55,9 +62,21 @@ body {
   height: 450px;
 }
 
+@media (max-width: 767px) {
+  #Layout .topImage {
+    height: 50vw;
+  }
+}
+
 #Layout .topImage img {
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 767px) {
+  #Layout .topImage img {
+    height: 50vw;
+  }
 }
 
 #Layout .topImage div {
@@ -65,7 +84,7 @@ body {
   position: absolute;
   left: 8%;
   top: 20%;
-  font-size: 100px;
+  font-size: 6vw;
 }
 
 #Layout main {
@@ -75,6 +94,15 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 767px) {
+  #Layout main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 #Layout main .children {
@@ -95,27 +123,82 @@ body {
           align-items: center;
 }
 
-#Layout main .profile .kanjiName {
+#Layout main .profile .profileContents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Layout main .profile .profileContents .kanjiName {
+  text-align: center;
   color: dimgrey;
-  font-size: 35px;
+  font-size: 3vw;
   font-weight: bold;
 }
 
-#Layout main .profile .romajiName {
-  font-size: 25px;
+#Layout main .profile .profileContents .romajiName {
+  text-align: center;
+  font-size: 2vw;
   margin-top: 5px;
 }
 
-#Layout main .profile .job {
+#Layout main .profile .profileContents .job {
+  text-align: center;
   margin: 10px 0 100px 0;
+  font-size: 1.5vw;
 }
 
-#Layout main .profile img {
-  width: 200px;
-  height: 200px;
+#Layout main .profile .profileContents img {
+  width: 15vw;
+  height: 15vw;
   border-radius: 120px;
   margin: 10px auto;
   display: block;
+}
+
+@media (max-width: 767px) {
+  #Layout main .profile {
+    width: 100%;
+    margin: 30px 0;
+  }
+  #Layout main .profile .profileContents {
+    width: 80%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  #Layout main .profile .profileContents .profileText {
+    width: 70%;
+  }
+  #Layout main .profile .profileContents .kanjiName {
+    font-size: 5vw;
+    text-align: start;
+  }
+  #Layout main .profile .profileContents .romajiName {
+    font-size: 3vw;
+    text-align: start;
+  }
+  #Layout main .profile .profileContents .job {
+    font-size: 2vw;
+    text-align: start;
+  }
+  #Layout main .profile .profileContents img {
+    width: 18vw;
+    height: 18vw;
+    margin: 10px 20px;
+    display: block;
+  }
 }
 
 #Layout main .profile .pastArticleList {
@@ -129,6 +212,18 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 767px) {
+  #Layout main .profile .pastArticleList {
+    width: 100%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 
 #Layout main .profile .pastArticleList .pastArticleTitle {
@@ -153,11 +248,41 @@ body {
   height: 0;
 }
 
-#Layout main .profile .pastArticleList .pastArticle {
+#Layout main .profile .pastArticleList .pastArticles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 767px) {
+  #Layout main .profile .pastArticleList .pastArticles {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+#Layout main .profile .pastArticleList .pastArticles .pastArticle {
   border-left: solid 5px burlywood;
   /*左線*/
   margin-top: 20px;
   padding-left: 10px;
+}
+
+@media (max-width: 767px) {
+  #Layout main .profile .pastArticleList .pastArticles .pastArticle {
+    margin-right: 3vw;
+  }
 }
 
 #Layout footer {
@@ -187,6 +312,14 @@ body {
   border-radius: 100px;
 }
 
+@media (max-width: 767px) {
+  #Layout footer .btn button {
+    width: 35vw;
+    font-size: 4vw;
+    padding-bottom: 0;
+  }
+}
+
 #Layout footer .btn button:hover {
   opacity: 0.8;
 }
@@ -198,7 +331,8 @@ body {
 #topPage .recentArticles .recentArticleTitle {
   position: relative;
   background: burlywood;
-  width: 280px;
+  font-size: 3vw;
+  width: 40%;
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -229,7 +363,7 @@ body {
 }
 
 #topPage .recentArticles .recentArticleList .recentArticle {
-  width: 700px;
+  width: 90%;
   height: 250px;
   margin-top: 30px;
 }

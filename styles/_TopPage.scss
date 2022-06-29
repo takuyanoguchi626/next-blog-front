@@ -4,7 +4,8 @@
   .recentArticleTitle {
     position: relative;
     background: burlywood;
-    width: 280px;
+    font-size: 3vw;
+    width: 40%;
     height: 60px;
     display: flex;
     align-items: center;
@@ -28,7 +29,7 @@
 
   .recentArticleList {
     .recentArticle {
-      width: 700px;
+      width: 90%;
       height: 250px;
       margin-top: 30px;
       .title {

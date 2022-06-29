@@ -66,21 +66,30 @@ export const Layout = (props: props) => {
       <main>
         <div className="children">{props.children}</div>
         <div className="profile">
-          <img src="/images/logo2.png" alt="" />
-          <div className="kanjiName">野口拓也</div>
-          <div className="romajiName">Takuya Noguchi</div>
-          <div className="job">ITエンジニア</div>
+          <div className="profileContents">
+            <img src="/images/logo2.png" alt="" />
+            <div className="profileText">
+              <div className="kanjiName">野口拓也</div>
+              <div className="romajiName">Takuya Noguchi</div>
+              <div className="job">ITエンジニア</div>
+            </div>
+          </div>
           <div className="pastArticleList">
             <div className="pastArticleTitle">過去の投稿</div>
-            {pastArticleList.map((pastArticle, index) => {
-              const formatPostDate = format(pastArticle.postDate, "yyyy/MM/dd");
-              return (
-                <div className="pastArticle" key={index}>
-                  <div>{pastArticle.title}</div>
-                  <div>{formatPostDate}</div>
-                </div>
-              );
-            })}
+            <div className="pastArticles">
+              {pastArticleList.map((pastArticle, index) => {
+                const formatPostDate = format(
+                  pastArticle.postDate,
+                  "yyyy/MM/dd"
+                );
+                return (
+                  <div className="pastArticle" key={index}>
+                    <div>{pastArticle.title}</div>
+                    <div>{formatPostDate}</div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </main>

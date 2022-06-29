@@ -1,0 +1,10 @@
+$breakpoint: (
+  sp: "(max-width:767px)",
+  tb: "(max-width:1024px)",
+);
+
+@mixin media($value) {
+  @media #{map-get($breakpoint,$value)} {
+    @content;
+  }
+}
