@@ -102,6 +102,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
   }
 }
 
@@ -177,10 +178,41 @@ body {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
+}
+
+@media (max-width: 767px) and (max-width: 767px) {
+  #Layout main .profile .profileContents {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
   #Layout main .profile .profileContents .profileText {
     width: 70%;
   }
+}
+
+@media (max-width: 767px) and (max-width: 767px) {
+  #Layout main .profile .profileContents .profileText {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 40%;
+  }
+}
+
+@media (max-width: 767px) {
   #Layout main .profile .profileContents .kanjiName {
     font-size: 5vw;
     text-align: start;
@@ -277,7 +309,7 @@ body {
 
 @media (max-width: 767px) {
   #Layout main .profile .pastArticleList .pastArticles .pastArticle {
-    margin-right: 3vw;
+    margin: 3vw;
   }
 }
 
@@ -324,6 +356,12 @@ body {
   margin-left: 50px;
 }
 
+@media (max-width: 767px) {
+  #topPage .recentArticles {
+    width: 100%;
+  }
+}
+
 #topPage .recentArticles .recentArticleTitle {
   position: relative;
   background: burlywood;
@@ -346,6 +384,13 @@ body {
   padding: 0.2em 0.5em;
 }
 
+@media (max-width: 767px) {
+  #topPage .recentArticles .recentArticleTitle {
+    width: 30vw;
+    font-size: 5vw;
+  }
+}
+
 #topPage .recentArticles .recentArticleTitle:after {
   position: absolute;
   content: "";
@@ -364,13 +409,37 @@ body {
   margin-top: 30px;
 }
 
+@media (max-width: 767px) {
+  #topPage .recentArticles .recentArticleList .recentArticle {
+    height: 60%;
+  }
+}
+
 #topPage .recentArticles .recentArticleList .recentArticle .title {
   font-weight: bold;
   font-size: 40px;
 }
 
+@media (max-width: 767px) {
+  #topPage .recentArticles .recentArticleList .recentArticle .title {
+    font-size: 8vw;
+  }
+}
+
 #topPage .recentArticles .recentArticleList .recentArticle .postDate {
   font-size: 30px;
   margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  #topPage .recentArticles .recentArticleList .recentArticle .postDate {
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 767px) {
+  #topPage .recentArticles .recentArticleList .recentArticle .content {
+    font-size: 3vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */
