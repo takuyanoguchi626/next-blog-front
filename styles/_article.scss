@@ -1,0 +1,18 @@
+.articleContent {
+  width: 90%;
+  @include media("sp") {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .title {
+    font-size: 4vw;
+    margin-bottom: 30px;
+  }
+  .postDate {
+    font-size: 2vw;
+    margin-bottom: 30px;
+  }
+  .content {
+    font-size: 1.8vw;
+  }
+}

@@ -22,11 +22,11 @@ export async function getStaticProps({ params }: { params: { id: number } }) {
 
 const Article = ({ article }: { article: article.Article }) => {
   return (
-    <>
+    <div id="article">
       <Layout>
         <articleContent.Article article={article}></articleContent.Article>
       </Layout>
-    </>
+    </div>
   );
 };
 

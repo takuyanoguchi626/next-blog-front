@@ -6,10 +6,15 @@ type props = {
 
 export const Article = (props: props) => {
   return (
-    <div id="article">
-      <div>title</div>
-      <div>postDate</div>
-      <div>content</div>
+    <div className="articleContent">
+      <div className="title">サンプル記事</div>
+      <div className="postDate">2022/06/30</div>
+      <div className="content">
+        これはサンプルの記事です。SSGの実装が完了したらDBの記事が表示されるようになります
+        あああああああああああああああああああああああああああああああああああああああああ
+        あああああああああああああああああああああああああああああああああああああああああああ
+        ああああああああああああああああああああああああああああああああああああああああ。
+      </div>
     </div>
   );
 };

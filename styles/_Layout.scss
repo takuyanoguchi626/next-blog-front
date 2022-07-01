@@ -63,6 +63,9 @@ main {
   }
   .children {
     width: 70%;
+    @include media("sp") {
+      width: 100%;
+    }
   }
   .profile {
     width: 30%;

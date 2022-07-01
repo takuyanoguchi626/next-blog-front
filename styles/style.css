@@ -110,6 +110,12 @@ body {
   width: 70%;
 }
 
+@media (max-width: 767px) {
+  #Layout main .children {
+    width: 100%;
+  }
+}
+
 #Layout main .profile {
   width: 30%;
   display: -webkit-box;
@@ -353,12 +359,12 @@ body {
 }
 
 #topPage .recentArticles {
-  margin-left: 50px;
+  padding-left: 50px;
 }
 
 @media (max-width: 767px) {
   #topPage .recentArticles {
-    width: 100%;
+    width: 80%;
   }
 }
 
@@ -403,6 +409,10 @@ body {
           box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
+#topPage .recentArticles .recentArticleList {
+  width: 100%;
+}
+
 #topPage .recentArticles .recentArticleList .recentArticle {
   width: 90%;
   height: 250px;
@@ -441,5 +451,30 @@ body {
   #topPage .recentArticles .recentArticleList .recentArticle .content {
     font-size: 3vw;
   }
+}
+
+#article .articleContent {
+  width: 90%;
+}
+
+@media (max-width: 767px) {
+  #article .articleContent {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+#article .articleContent .title {
+  font-size: 4vw;
+  margin-bottom: 30px;
+}
+
+#article .articleContent .postDate {
+  font-size: 2vw;
+  margin-bottom: 30px;
+}
+
+#article .articleContent .content {
+  font-size: 1.8vw;
 }
 /*# sourceMappingURL=style.css.map */
