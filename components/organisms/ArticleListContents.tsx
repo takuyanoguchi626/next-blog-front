@@ -4,11 +4,11 @@ import { useState } from "react";
 import { Article } from "../../types/Article";
 
 type props = {
-  recentArticles: Article[];
+  Articles: Article[];
 };
 
-export const RecentArticle = (props: props) => {
-  const { recentArticles } = props;
+export const ArticleListContents = (props: props) => {
+  const { Articles } = props;
   const [recentArticleList, setRecentArticleList] = useState<Article[]>([
     {
       id: 1,
@@ -38,20 +38,18 @@ export const RecentArticle = (props: props) => {
 
   return (
     <div className="recentArticles">
-      <h1 className="recentArticleTitle">最近の投稿</h1>
+      <h1 className="recentArticleTitle">過去の投稿</h1>
       <div>最終更新日：2022/07/23</div>
       <div className="recentArticleList">
         {recentArticleList.map((article, index) => {
           const formatPostDate = format(article.postDate, "yyyy/MM/dd");
           return (
             <Link href={"/posts/2"}>
-              <a>
-                <div className="recentArticle" key={index}>
-                  <div className="title">{article.title}</div>
-                  <div className="postDate">{formatPostDate}</div>
-                  <div className="content">{article.content}</div>
-                </div>
-              </a>
+              <div className="recentArticle" key={index}>
+                <div className="title">{article.title}</div>
+                <div className="postDate">{formatPostDate}</div>
+                <div className="content">{article.content}</div>
+              </div>
             </Link>
           );
         })}

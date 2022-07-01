@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 import Head from "next/head";
+import Link from "next/link";
 import { ReactNode, useState } from "react";
 
 type props = {
@@ -51,8 +52,16 @@ export const Layout = (props: props) => {
         ></link>
       </Head>
       <header>
-        <img className="logo" src="/images/logo2.png" alt="" />
-        <div className="title">Next Blog</div>
+        <Link href={"/"}>
+          <a>
+            <img className="logo" src="/images/logo2.png" alt="" />
+          </a>
+        </Link>
+        <Link href={"/"}>
+          <a>
+            <div className="title">Next Blog</div>
+          </a>
+        </Link>
         <div className="snsImages">
           <img className="sns" src="/images/github.jpg" alt="" />
           <img className="sns" src="/images/twitter.png" alt="" />
@@ -83,12 +92,19 @@ export const Layout = (props: props) => {
                   "yyyy/MM/dd"
                 );
                 return (
-                  <div className="pastArticle" key={index}>
-                    <div>{pastArticle.title}</div>
-                    <div>{formatPostDate}</div>
-                  </div>
+                  <Link href={"/posts/2"}>
+                    <a>
+                      <div className="pastArticle" key={index}>
+                        <div>{pastArticle.title}</div>
+                        <div>{formatPostDate}</div>
+                      </div>
+                    </a>
+                  </Link>
                 );
               })}
+              <Link href={"/ArticleList"}>
+                <a>...もっと見る</a>
+              </Link>
             </div>
           </div>
         </div>
