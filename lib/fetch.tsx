@@ -13,7 +13,11 @@ export async function getRecentArticles() {
 export async function getArticleIds() {
   // const res = await fetch("");
   // const articleIds = await res.json();
-  const articleIds = [{ id: 1 }, { id: 2 }, { id: 3 }];
+  const articleIds = [
+    { params: { id: "1" } },
+    { params: { id: "2" } },
+    { params: { id: "3" } },
+  ];
   return articleIds;
 }
 
@@ -24,24 +28,24 @@ export async function getArticle(id: number) {
     {
       id: 1,
       title: "サンプル記事",
-      postDate: new Date(),
-      editDate: new Date(),
+      postDate: "new Date()",
+      editDate: "new Date()",
       content:
         "これはサンプルの記事です。SSGの実装が完了したらDBの記事が表示されるようになります。",
     },
     {
       id: 1,
       title: "サンプル記事",
-      postDate: new Date(),
-      editDate: new Date(),
+      postDate: "new Date()",
+      editDate: "new Date()",
       content:
         "これはサンプルの記事です。SSGの実装が完了したらDBの記事が表示されるようになります。",
     },
     {
       id: 1,
       title: "サンプル記事",
-      postDate: new Date(),
-      editDate: new Date(),
+      postDate: "new Date()",
+      editDate: "new Date()",
       content:
         "これはサンプルの記事です。SSGの実装が完了したらDBの記事が表示されるようになります。",
     },

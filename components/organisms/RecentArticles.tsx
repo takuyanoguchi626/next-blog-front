@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import Link from "next/link";
 import { useState } from "react";
 import { Article } from "../../types/Article";
 
@@ -43,11 +44,13 @@ export const RecentArticle = (props: props) => {
         {recentArticleList.map((article, index) => {
           const formatPostDate = format(article.postDate, "yyyy/MM/dd");
           return (
-            <div className="recentArticle" key={index}>
-              <div className="title">{article.title}</div>
-              <div className="postDate">{formatPostDate}</div>
-              <div className="content">{article.content}</div>
-            </div>
+            <Link href={"/posts/2"}>
+              <div className="recentArticle" key={index}>
+                <div className="title">{article.title}</div>
+                <div className="postDate">{formatPostDate}</div>
+                <div className="content">{article.content}</div>
+              </div>
+            </Link>
           );
         })}
       </div>

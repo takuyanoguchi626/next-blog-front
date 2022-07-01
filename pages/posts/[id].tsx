@@ -6,7 +6,7 @@ import * as articleContent from "../../components/organisms/Article";
 export async function getStaticPaths() {
   const articleIds = await getArticleIds();
   return {
-    paths: [{ params: { ...articleIds } }],
+    paths: articleIds,
     fallback: false,
   };
 }
