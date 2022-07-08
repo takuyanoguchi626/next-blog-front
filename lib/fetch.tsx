@@ -1,4 +1,9 @@
 import fetch from "node-fetch";
+import { Article } from "../types/Article";
+
+type id = {
+  _id: string;
+};
 
 /**
  * DBの全記事を取得する.
@@ -9,6 +14,24 @@ export async function getAllArticles() {
   const res = await fetch("http://localhost:3000/articles", { method: "GET" });
   const allArticles = (await res.json()) as any;
   return allArticles;
+}
+/**
+ * DBの全記事のIDを取得する.
+ *
+ * @returns DBの全記事のID
+ */
+export async function getAllIdsOfArticles() {
+  const res = await fetch("http://localhost:3000/articles/allIdsOfArticles", {
+    method: "GET",
+  });
+  const allIdsOfArticles = (await res.json()) as Array<id>;
+  return allIdsOfArticles.map((idObj) => {
+    return {
+      params: {
+        _id: idObj._id,
+      },
+    };
+  });
 }
 /**
  * 最新の3記事を取得する.
@@ -30,20 +53,26 @@ export async function getPastArticles() {
   const pastArticles = (await res.json()) as any;
   return pastArticles;
 }
-
-export async function getArticleIds() {
-  // const res = await fetch("");
-  // const articleIds = await res.json();
-  const articleIds = [
-    { params: { id: "1" } },
-    { params: { id: "2" } },
-    { params: { id: "3" } },
-  ];
-  return articleIds;
-}
-
+/**
+ * 1記事を取得する.
+ *
+ * @param articleId - 記事のID
+ * @returns 1記事
+ */
 export async function getArticle(articleId: string) {
-  const res = await fetch(`http://localhost:3000/articles/${articleId}`);
+  const res = await fetch(
+    `http://localhost:3000/articles/article/${articleId}`
+  );
   const article = (await res.json()) as any;
   return article;
 }
+
+// const moldingIdsOfArticles = [];
+// for (const id of allIdsOfArticles) {
+//   moldingIdsOfArticles.push({
+//     params: {
+//       _id: id._id,
+//     },
+//   });
+// }
+// return moldingIdsOfArticles;

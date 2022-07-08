@@ -1,5 +1,4 @@
 import { Layout } from "../components/Layout";
-import { RecentArticle } from "../components/organisms/RecentArticles";
 import { ArticleListContents } from "../components/organisms/ArticleListContents";
 import { getAllArticles, getPastArticles } from "../lib/fetch";
 import { Article } from "../types/Article";

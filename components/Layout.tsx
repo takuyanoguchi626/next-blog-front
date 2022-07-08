@@ -29,8 +29,6 @@ export const Layout = (props: props) => {
     },
   ]);
 
-  console.log(props.pastArticles);
-
   useEffect(() => {
     setPastArticleList(() => props.pastArticles);
   }, []);
