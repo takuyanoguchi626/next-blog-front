@@ -1,29 +1,30 @@
 import { Layout } from "../components/Layout";
 import { RecentArticle } from "../components/organisms/RecentArticles";
 import { ArticleListContents } from "../components/organisms/ArticleListContents";
-import { getRecentArticles } from "../lib/fetch";
+import { getAllArticles, getPastArticles } from "../lib/fetch";
 import { Article } from "../types/Article";
 
 export async function getStaticProps() {
-  const recentArticles = await getRecentArticles();
+  const allArticles = await getAllArticles();
+  const pastArticles = await getPastArticles();
   return {
     props: {
-      recentArticles,
+      allArticles,
+      pastArticles,
     },
   };
 }
 
 type props = {
-  recentArticles: Article[];
+  allArticles: Article[];
+  pastArticles: Article[];
 };
 
-const ArticleList: React.FC<props> = ({ recentArticles }) => {
-  console.log(recentArticles);
-
+const ArticleList: React.FC<props> = (props) => {
   return (
     <div id="topPage">
-      <Layout>
-        <ArticleListContents Articles={recentArticles}></ArticleListContents>
+      <Layout pastArticles={props.pastArticles}>
+        <ArticleListContents articles={props.allArticles}></ArticleListContents>
       </Layout>
     </div>
   );

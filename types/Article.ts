@@ -1,7 +1,7 @@
 export type Article = {
-  id: number;
+  _id: string;
   title: string;
   postDate: Date;
-  editDate: Date;
+  editDate?: Date;
   content: string;
 };

@@ -1,44 +1,39 @@
 import { format } from "date-fns";
 import Head from "next/head";
 import Link from "next/link";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
+import { Article } from "../types/Article";
 
 type props = {
   children: ReactNode;
-};
-
-type PastArticle = {
-  title: string;
-  postDate: Date;
+  pastArticles: Article[];
 };
 
 export const Layout = (props: props) => {
-  const [pastArticleList, setPastArticleList] = useState<PastArticle[]>([
+  const [pastArticleList, setPastArticleList] = useState<Article[]>([
     {
-      title: "サンプル過去記事",
+      _id: "1",
+      title: "サンプル記事",
       postDate: new Date(),
+      editDate: new Date(),
+      content:
+        "これはサンプルの記事です。SSGの実装が完了したらDBの記事が表示されるようになります。",
     },
     {
-      title: "サンプル過去記事",
+      _id: "1",
+      title: "サンプル記事",
       postDate: new Date(),
-    },
-    {
-      title: "サンプル過去記事",
-      postDate: new Date(),
-    },
-    {
-      title: "サンプル過去記事",
-      postDate: new Date(),
-    },
-    {
-      title: "サンプル過去記事",
-      postDate: new Date(),
-    },
-    {
-      title: "サンプル過去記事",
-      postDate: new Date(),
+      editDate: new Date(),
+      content:
+        "これはサンプルの記事です。SSGの実装が完了したらDBの記事が表示されるようになります。",
     },
   ]);
+
+  console.log(props.pastArticles);
+
+  useEffect(() => {
+    setPastArticleList(() => props.pastArticles);
+  }, []);
 
   return (
     <div id="Layout">
@@ -88,13 +83,13 @@ export const Layout = (props: props) => {
             <div className="pastArticles">
               {pastArticleList.map((pastArticle, index) => {
                 const formatPostDate = format(
-                  pastArticle.postDate,
+                  new Date(pastArticle.postDate),
                   "yyyy/MM/dd"
                 );
                 return (
-                  <Link href={"/posts/2"}>
+                  <Link href={`/posts/${pastArticle._id}`} key={index}>
                     <a>
-                      <div className="pastArticle" key={index}>
+                      <div className="pastArticle">
                         <div>{pastArticle.title}</div>
                         <div>{formatPostDate}</div>
                       </div>

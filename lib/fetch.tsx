@@ -1,13 +1,34 @@
 import fetch from "node-fetch";
 
+/**
+ * DBの全記事を取得する.
+ *
+ * @returns DBの全記事
+ */
+export async function getAllArticles() {
+  const res = await fetch("http://localhost:3000/articles", { method: "GET" });
+  const allArticles = (await res.json()) as any;
+  return allArticles;
+}
+/**
+ * 最新の3記事を取得する.
+ *
+ * @returns 最新の３記事
+ */
 export async function getRecentArticles() {
-  const res = await fetch(
-    "http://153.127.48.168:8080/ecsite-api/item/items/pizza"
-  );
-  const data = (await res.json()) as any;
-  const recentArticles = data.items;
-
+  const res = await fetch("http://localhost:3000/articles/recentArticles");
+  const recentArticles = (await res.json()) as any;
   return recentArticles;
+}
+/**
+ * 過去の7記事を取得する.
+ *
+ * @returns 過去の7記事
+ */
+export async function getPastArticles() {
+  const res = await fetch("http://localhost:3000/articles/pastArticles");
+  const pastArticles = (await res.json()) as any;
+  return pastArticles;
 }
 
 export async function getArticleIds() {
@@ -21,34 +42,8 @@ export async function getArticleIds() {
   return articleIds;
 }
 
-export async function getArticle(id: number) {
-  // const res = await fetch("");
-  // const article = await res.json();
-  const article = [
-    {
-      id: 1,
-      title: "サンプル記事",
-      postDate: "new Date()",
-      editDate: "new Date()",
-      content:
-        "これはサンプルの記事です。SSGの実装が完了したらDBの記事が表示されるようになります。",
-    },
-    {
-      id: 1,
-      title: "サンプル記事",
-      postDate: "new Date()",
-      editDate: "new Date()",
-      content:
-        "これはサンプルの記事です。SSGの実装が完了したらDBの記事が表示されるようになります。",
-    },
-    {
-      id: 1,
-      title: "サンプル記事",
-      postDate: "new Date()",
-      editDate: "new Date()",
-      content:
-        "これはサンプルの記事です。SSGの実装が完了したらDBの記事が表示されるようになります。",
-    },
-  ];
+export async function getArticle(articleId: string) {
+  const res = await fetch(`http://localhost:3000/articles/${articleId}`);
+  const article = (await res.json()) as any;
   return article;
 }
