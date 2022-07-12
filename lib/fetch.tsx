@@ -66,13 +66,3 @@ export async function getArticle(articleId: string) {
   const article = (await res.json()) as any;
   return article;
 }
-
-// const moldingIdsOfArticles = [];
-// for (const id of allIdsOfArticles) {
-//   moldingIdsOfArticles.push({
-//     params: {
-//       _id: id._id,
-//     },
-//   });
-// }
-// return moldingIdsOfArticles;

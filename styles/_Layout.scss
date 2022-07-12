@@ -1,22 +1,12 @@
 .logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  margin: 0 10px;
+  @include headerLogo;
 }
 .title {
-  font-weight: bold;
-  font-size: xx-large;
-  @include media("sp") {
-    font-size: 5vw;
-  }
+  @include headerTitle;
 }
 header {
-  width: 100%;
-  background-color: burlywood;
-  height: 70px;
-  display: flex;
-  align-items: center;
+  @include header;
+  background-color: $headerBackGroundColor;
   .snsImages {
     margin-right: 0;
     margin-left: auto;
@@ -193,30 +183,5 @@ main {
   }
 }
 footer {
-  background-color: burlywood;
-  display: flex;
-  align-items: center;
-  height: 70px;
-  .btn {
-    margin-right: 0;
-    margin-left: auto;
-    button {
-      margin: auto 20px;
-      padding-bottom: 28px;
-      width: 200px;
-      height: 30px;
-      font-size: 20px;
-      background-color: bisque;
-      border: none;
-      border-radius: 100px;
-      @include media("sp") {
-        width: 35vw;
-        font-size: 4vw;
-        padding-bottom: 0;
-      }
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-  }
+  @include footer;
 }

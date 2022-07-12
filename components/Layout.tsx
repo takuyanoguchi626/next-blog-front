@@ -106,7 +106,9 @@ export const Layout = (props: props) => {
         <img className="logo" src="/images/logo2.png" alt="" />
         <div className="title">Next-blog</div>
         <div className="btn">
-          <button>administrator page</button>
+          <Link href={"/LoginAdmin"}>
+            <button>administrator page</button>
+          </Link>
         </div>
       </footer>
     </div>
