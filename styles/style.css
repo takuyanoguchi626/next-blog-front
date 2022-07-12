@@ -611,7 +611,9 @@ a {
 #loginAdmin .loginForm form .content input {
   border-radius: 20em;
   width: 100%;
-  height: 5vh;
+  height: 3vh;
+  padding: 10px;
+  font-size: 2vw;
 }
 
 #loginAdmin .loginForm form .loginButton {
