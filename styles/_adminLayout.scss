@@ -14,7 +14,12 @@ header {
   }
 }
 main {
-  min-height: 581px;
+  height: 81vh;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 footer {
   @include footer;

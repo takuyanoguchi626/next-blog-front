@@ -4,8 +4,10 @@ import LoginAdminContents from "../components/organisms/LoginAdminContents";
 
 export default function LoginAdmin() {
   return (
-    <AdminLayout>
-      <LoginAdminContents></LoginAdminContents>
-    </AdminLayout>
+    <div id="loginAdmin">
+      <AdminLayout>
+        <LoginAdminContents></LoginAdminContents>
+      </AdminLayout>
+    </div>
   );
 }

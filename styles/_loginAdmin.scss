@@ -1,0 +1,37 @@
+.loginForm {
+  width: 60vw;
+  height: 50vh;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .loginTitle {
+      font-size: 5vw;
+    }
+    .content {
+      width: 50vw;
+      .inputTitle {
+        font-size: 3vw;
+        .errorMessage {
+          font-size: 2vw;
+          color: rgb(220, 87, 87);
+        }
+      }
+      input {
+        border-radius: 20em;
+        width: 100%;
+        height: 5vh;
+      }
+    }
+    .loginButton {
+      width: 90%;
+      display: flex;
+      justify-content: flex-end;
+      button {
+        @include button;
+        background-color: burlywood;
+        margin: 3vw;
+      }
+    }
+  }
+}

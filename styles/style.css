@@ -37,7 +37,7 @@ a {
 
 #Layout header {
   width: 100%;
-  height: 70px;
+  height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -332,7 +332,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 70px;
+  height: 9vh;
 }
 
 #Layout footer .btn {
@@ -503,7 +503,7 @@ a {
 
 #AdminLayout header {
   width: 100%;
-  height: 70px;
+  height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -520,7 +520,18 @@ a {
 }
 
 #AdminLayout main {
-  min-height: 581px;
+  height: 81vh;
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #AdminLayout footer {
@@ -531,7 +542,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 70px;
+  height: 9vh;
 }
 
 #AdminLayout footer .btn {
@@ -559,6 +570,82 @@ a {
 }
 
 #AdminLayout footer .btn button:hover {
+  opacity: 0.8;
+}
+
+#loginAdmin .loginForm {
+  width: 60vw;
+  height: 50vh;
+}
+
+#loginAdmin .loginForm form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#loginAdmin .loginForm form .loginTitle {
+  font-size: 5vw;
+}
+
+#loginAdmin .loginForm form .content {
+  width: 50vw;
+}
+
+#loginAdmin .loginForm form .content .inputTitle {
+  font-size: 3vw;
+}
+
+#loginAdmin .loginForm form .content .inputTitle .errorMessage {
+  font-size: 2vw;
+  color: #dc5757;
+}
+
+#loginAdmin .loginForm form .content input {
+  border-radius: 20em;
+  width: 100%;
+  height: 5vh;
+}
+
+#loginAdmin .loginForm form .loginButton {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#loginAdmin .loginForm form .loginButton button {
+  margin: auto 20px;
+  padding-bottom: 28px;
+  width: 200px;
+  height: 30px;
+  font-size: 20px;
+  background-color: bisque;
+  border: none;
+  border-radius: 100px;
+  background-color: burlywood;
+  margin: 3vw;
+}
+
+@media (max-width: 767px) {
+  #loginAdmin .loginForm form .loginButton button {
+    width: 35vw;
+    font-size: 4vw;
+    padding-bottom: 0;
+  }
+}
+
+#loginAdmin .loginForm form .loginButton button:hover {
   opacity: 0.8;
 }
 /*# sourceMappingURL=style.css.map */
