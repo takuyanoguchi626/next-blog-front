@@ -1,8 +1,10 @@
 import { useFormik } from "formik";
+import { useRouter } from "next/router";
 import React from "react";
 import * as Yup from "yup";
 
 export default function LoginAdminContents() {
+  const router = useRouter();
   const validationSchema = Yup.object({
     administratorId: Yup.string().required("AdministratorIDを入力してください"),
     password: Yup.string().required("Passwordを入力してください"),
@@ -16,6 +18,7 @@ export default function LoginAdminContents() {
     validationSchema: validationSchema,
     onSubmit: () => {
       console.log(formik.values);
+      router.push("AdminTop");
     },
   });
 

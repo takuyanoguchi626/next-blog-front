@@ -1,0 +1,44 @@
+.profileContents {
+  display: flex;
+  //   flex-direction: column;
+  align-items: center;
+  .profileText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3vw;
+  }
+  .kanjiName {
+    text-align: center;
+    color: dimgrey;
+    font-size: 3vw;
+    font-weight: bold;
+  }
+  .romajiName {
+    text-align: center;
+    font-size: 2vw;
+    margin-top: 5px;
+  }
+  .job {
+    text-align: center;
+    margin: 10px 0 0 0;
+    font-size: 1.5vw;
+  }
+  img {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 120px;
+    margin: 10px auto;
+    display: block;
+  }
+}
+
+.editListContents {
+  .editList {
+    list-style: none;
+    li {
+      font-size: 3vw;
+    }
+  }
+}
