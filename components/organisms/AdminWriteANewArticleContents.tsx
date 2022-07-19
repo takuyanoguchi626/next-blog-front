@@ -2,14 +2,32 @@ import { useFormik } from "formik";
 import { useRouter } from "next/router";
 import React from "react";
 import * as Yup from "yup";
+import { Article } from "../../types/Article";
 
 export default function AdminWriteANewArticleContents() {
   const router = useRouter();
 
   const validationSchema = Yup.object({
-    title: Yup.string(),
-    content: Yup.string(),
+    title: Yup.string().min(5),
+    content: Yup.string().min(3),
   });
+
+  const postArticle = async (article: Article) => {
+    console.log("Bearer" + " " + sessionStorage.getItem("jwt"));
+    const res = await fetch("http://localhost:3000/articles", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer" + " " + sessionStorage.getItem("jwt"),
+      },
+      body: JSON.stringify({
+        title: article.title,
+        content: article.content,
+      }),
+    });
+    const postedArticle = (await res.json()) as any;
+    return postedArticle;
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -17,10 +35,12 @@ export default function AdminWriteANewArticleContents() {
       content: "",
     },
     validationSchema: validationSchema,
-    onSubmit: () => {
-      console.log(formik.values);
+    onSubmit: async (values) => {
+      console.log(values);
+      await postArticle(values);
     },
   });
+
   return (
     <div>
       <div>Write A New Article!!</div>

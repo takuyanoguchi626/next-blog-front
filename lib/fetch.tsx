@@ -66,3 +66,34 @@ export async function getArticle(articleId: string) {
   const article = (await res.json()) as any;
   return article;
 }
+
+// export const postArticle = async (article: Article) => {
+//   const res = await fetch("http://localhost:3000/articles", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: "Bearer" + " " + sessionStorage.getItem("jwtToken"),
+//     },
+//     body: JSON.stringify({
+//       title: article.title,
+//       content: article.content,
+//     }),
+//   });
+//   const postedArticle = (await res.json()) as any;
+//   return postedArticle;
+// };
+
+// export type admin = {
+//   administratorId: string;
+//   password: string;
+// };
+
+// export const login = async (admin: any) => {
+//   const res = await fetch("http://localhost:3000/auth/login", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(admin),
+//   });
+// };

@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import { useRouter } from "next/router";
 import React from "react";
 import * as Yup from "yup";
+// import { login } from "../../lib/fetch";
 
 export default function LoginAdminContents() {
   const router = useRouter();
@@ -10,15 +11,30 @@ export default function LoginAdminContents() {
     password: Yup.string().required("Passwordを入力してください"),
   });
 
+  const login = async (admin: any) => {
+    const res = await fetch("http://localhost:3000/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(admin),
+    });
+    const data = (await res.json()) as any;
+    sessionStorage.setItem("jwt", data.accessToken);
+    return data;
+  };
+
   const formik = useFormik({
     initialValues: {
       administratorId: "",
       password: "",
     },
     validationSchema: validationSchema,
-    onSubmit: () => {
-      console.log(formik.values);
-      router.push("AdminTop");
+    onSubmit: async (values) => {
+      const token = await login(values);
+      if (token.accessToken) {
+        router.push("AdminTop");
+      }
     },
   });
 
