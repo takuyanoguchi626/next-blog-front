@@ -1,6 +1,8 @@
+import { useRouter } from "next/router";
 import React from "react";
 
 export default function AdminTopContens() {
+  const router = useRouter();
   return (
     <div>
       <div className="profileContents">
@@ -13,9 +15,15 @@ export default function AdminTopContens() {
       </div>
       <div className="editListContents">
         <ul className="editList">
-          <li>・Edit Profile</li>
-          <li>・Write A New Article</li>
-          <li>・Edit Past Articles</li>
+          <li onClick={() => router.push("/AdminEditProfile")}>
+            ・Edit Profile
+          </li>
+          <li onClick={() => router.push("/AdminWriteANewArticle")}>
+            ・Write A New Article
+          </li>
+          <li onClick={() => router.push("/AdminEditPastArticles")}>
+            ・Edit Past Articles
+          </li>
         </ul>
       </div>
     </div>
