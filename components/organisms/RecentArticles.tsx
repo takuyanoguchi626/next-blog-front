@@ -43,7 +43,6 @@ export const RecentArticle = (props: props) => {
   return (
     <div className="recentArticles">
       <h1 className="recentArticleTitle">最近の投稿</h1>
-      <div>最終更新日：2022/07/23</div>
       <div className="recentArticleList">
         {recentArticleList.map((article, index) => {
           const formatPostDate = format(

@@ -10,6 +10,9 @@ type props = {
 };
 
 export const Layout = (props: props) => {
+  console.log("layout");
+  console.log(props);
+
   const [pastArticleList, setPastArticleList] = useState<Article[]>([
     {
       _id: "1",

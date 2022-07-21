@@ -9,14 +9,15 @@ import * as articleContent from "../../components/organisms/Article";
 
 export async function getStaticPaths() {
   const allArticleIds = await getAllIdsOfArticles();
+  console.log(allArticleIds);
   return {
-    paths: allArticleIds,
+    paths: [...allArticleIds],
     fallback: false,
   };
 }
 
 export async function getStaticProps({ params }: any) {
-  const article = await getArticle(params._id);
+  const article = await getArticle(String(params._id));
   const pastArticles = await getPastArticles();
   console.log(article);
 
@@ -29,11 +30,15 @@ export async function getStaticProps({ params }: any) {
 }
 
 type props = {
-  article: article.Article;
+  article: Array<article.Article>;
   pastArticles: article.Article[];
 };
 
 const Article = (props: props) => {
+  console.log("sss");
+
+  console.log(props);
+
   return (
     <div id="article">
       <Layout pastArticles={props.pastArticles}>

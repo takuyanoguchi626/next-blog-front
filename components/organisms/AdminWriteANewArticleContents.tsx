@@ -12,7 +12,12 @@ export default function AdminWriteANewArticleContents() {
     content: Yup.string().min(3),
   });
 
-  const postArticle = async (article: Article) => {
+  type createArticle = {
+    title: string;
+    content: string;
+  };
+
+  const postArticle = async (article: createArticle) => {
     console.log("Bearer" + " " + sessionStorage.getItem("jwt"));
     const res = await fetch("http://localhost:3000/articles", {
       method: "POST",
@@ -37,7 +42,7 @@ export default function AdminWriteANewArticleContents() {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       console.log(values);
-      await postArticle(values);
+      const data = await postArticle(values);
     },
   });
 
